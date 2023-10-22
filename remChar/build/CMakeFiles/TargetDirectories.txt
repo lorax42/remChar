@@ -1,3 +1,0 @@
-/home/lloyd/Documents/code/c++/remChar/build/CMakeFiles/remChar.dir
-/home/lloyd/Documents/code/c++/remChar/build/CMakeFiles/edit_cache.dir
-/home/lloyd/Documents/code/c++/remChar/build/CMakeFiles/rebuild_cache.dir
