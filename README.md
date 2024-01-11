@@ -19,4 +19,8 @@ Removes every instance of a given character from a given string.
       helloworld
 
 ## BUILD
-Run _build.sh_ to build and run _./build/remChar_ to run the program.
+    $ mkdir src/build/
+    $ cd src/build/
+    $ cmake -S ..
+    $ make # to build project locally OR
+    $ sudo make install # to build and install the project
