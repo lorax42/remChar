@@ -1,8 +1,11 @@
 # remChar
-Removes every instance of a character in a string from a string.
+Removes every instance of a character or complete string in a string from a string.
 
 ## USAGE
-    remChar <string> [<string>|-f <file>] (-o <file>)
+    **remChar** _string_ [**-s** _string_] _string_ | [**-f** _file_] [**-o** _file_]\
+    **-f** _file_:   file containing text to be modified\
+    **-o** _file_:   output file\
+    **-s** _string_: string to be completely removed
 
 ## EXAMPLES
     $ remChar l hello
@@ -32,6 +35,11 @@ Removes every instance of a character in a string from a string.
       hello world
     $ cat output.txt
       eoword
+
+**OR**
+
+    $ remChar -s "hello" "hello world"
+       world
 
 ## BUILD
     $ mkdir src/build/
