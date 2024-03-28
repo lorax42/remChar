@@ -5,8 +5,13 @@
 
 // PRINTS HELP
 int help(){
-	std::cout<<"remChar <character> <string|-f <file>\n"
-		 <<"MIT-License Lloyd Bush 2024\n";
+	std::cout
+        <<"remChar - remove a string or list characters from a string\n"
+        <<"remChar string | [-s string] string | [-f file] [-o file]\n"
+        <<"-f file: file containing text to be modified\n"
+        <<"-o file: output file\n"
+        <<"-s string: string to be completely removed\n"
+	    <<"MIT-License Lloyd Bush 2024\n";
 	return 0;
 }
 
@@ -58,11 +63,16 @@ int remChar(char rem,std::string &text){
 	return 0;
 }
 
+// REMOVES EVERY INSTANCE OF A COMPLETE STRING FROM A STRING TEXT
+int remStr(std::string rem,std::string &text){
+    return 0;
+}
+
 // DRIVER CODE
 int main(int argc,char *argv[]){
 	std::vector<std::string> args; // vector of command line arguments
 	std::string text; // the text to be edited
-	std::string remove; // the list of chars to be removed from text
+	std::string remove=""; // the list of chars or the complete string to be removed from text
 	std::string fileIn="",fileOut=""; // names of input and output files
 
 	// read command line arguments
@@ -101,6 +111,17 @@ int main(int argc,char *argv[]){
 
 			fileOut=args[i+1];
 		}
+        // checks for string to be removed flag
+        else if(args[i]=="-s"){
+            // checks for string after flag
+            if(i+1>=args.size()){
+                std::cerr<<"ERROR: missing string after -s flag\n\n";
+                help();
+                return 1;
+            }
+
+            remove=args[i+1];
+        }
 	}
 
 	// if file was specified read from it else read from args[2]
@@ -113,15 +134,23 @@ int main(int argc,char *argv[]){
 		text=args[2];
 	}
 
-	remove=args[1]; // set the string to be removed to args[1]
+    // check if remove is set to a string (by the -s flag)
+    if(remove==""){
+        remove=args[1]; // set the string to be removed to args[1]
 
-	// run remove for every char in string remove
-	for(int i=0;i<remove.size();i++){
-		char rem=remove[i];
-		int x=remChar(rem,text);
+        // run remove for every char in string remove
+        for(int i=0;i<remove.size();i++){
+            char rem=remove[i];
+            int x=remChar(rem,text);
 
-		if(x!=0){return x;}
-	}
+            if(x!=0){return x;}
+        }
+    }
+    else{
+        int x=remStr(remove,text); // remove complete string from text
+
+        if(x!=0){return x;}
+    }
 	
 	// if file was specified write to it else just print text to terminal
 	if(fileOut!=""){
