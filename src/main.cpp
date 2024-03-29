@@ -64,7 +64,38 @@ int remChar(char rem,std::string &text){
 }
 
 // REMOVES EVERY INSTANCE OF A COMPLETE STRING FROM A STRING TEXT
+/*
+ * Error:
+ *
+ * $ ./remChar -s hello "hello world"
+ *   terminate called after throwing an instance of 'std::out_of_range'
+ *   what():  basic_string::erase: __pos (which is 144) > this->size() (which is 0)
+ *   Aborted
+ *
+ * But this works:
+ *
+ * $ cat test.txt
+ *   hello world
+ *   world hello
+ *
+ * $ ./remChar -s hello -f test.txt
+ *    world
+ *   world
+ *
+ */
+
 int remStr(std::string rem,std::string &text){
+    for(int i=0;i<=text.length()-rem.length();i++){
+        int equal=1;
+        for(int j=0;j<rem.length();j++){
+            if(rem[j]!=text[i+j]){
+                equal=0;
+            }
+        }
+        if(equal==1){
+            text.erase(i,rem.length());
+        }
+    }
     return 0;
 }
 
