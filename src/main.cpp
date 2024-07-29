@@ -81,7 +81,7 @@ int main(int argc,char *argv[]){
 	}
 
 	// checks for flags in args and applies them
-	for(int i=0;i<args.size();i++){
+	for(size_t i=0;i<args.size();i++){
 		// checks for input file flag
 		if(args[i]=="-f"){
 			// checks for file name after flag
@@ -119,7 +119,7 @@ int main(int argc,char *argv[]){
 	remove=args[1]; // set the string to be removed to args[1]
 
 	// run remove for every char in string remove
-	for(int i=0;i<remove.size();i++){
+	for(size_t i=0;i<remove.size();i++){
 		char rem=remove[i];
 		int x=remChar(rem,text);
 
