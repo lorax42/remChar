@@ -5,8 +5,11 @@
 
 // PRINTS HELP
 int help(){
-	std::cout<<"remChar <character> <string|-f <file>\n"
-		 <<"MIT-License Lloyd Bush 2024\n";
+	std::cout
+        <<"remChar <character> <string|-f <file> [<-o file>]\n"
+        <<"-f\tinput file\n"
+        <<"-o\toutput file\n"
+		<<"MIT-License Lloyd Bush 2024\n";
 	return 0;
 }
 
