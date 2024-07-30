@@ -2,11 +2,11 @@
 Removes every instance of characters or complete string in a string from a string.
 
 ## USAGE
-remChar - remove a string or list characters from a string\n"
-**remChar** _chars_to_be_removed_ | [-s string_to_be_removed] _string_ | [-f file] [-o file]\n"
-**-f** file: file containing text to be modified\n"
-**-o** file: output file\n"
-**-s** string: string to be completely removed\n"
+remChar - remove a string or list characters from a string\
+**remChar** _chars_to_be_removed_ | [-s string_to_be_removed] _string_ | [-f file] [-o file]\
+**-f** file: file containing text to be modified\
+**-o** file: output file\
+**-s** string: string to be completely removed
 
 ## EXAMPLES
     $ remChar l hello
