@@ -1,11 +1,12 @@
 # remChar
-Removes every instance of a character or complete string in a string from a string.
+Removes every instance of characters or complete string in a string from a string.
 
 ## USAGE
-    **remChar** _string_ [**-s** _string_] _string_ | [**-f** _file_] [**-o** _file_]\
-    **-f** _file_:   file containing text to be modified\
-    **-o** _file_:   output file\
-    **-s** _string_: string to be completely removed
+    remChar - remove a string or list characters from a string\n"
+    **remChar _chars_to_be_removed_ | [-s string_to_be_removed] _string_ | [-f file] [-o file]\n"
+    **-f file: file containing text to be modified\n"
+    **-o file: output file\n"
+    **-s string: string to be completely removed\n"
 
 ## EXAMPLES
     $ remChar l hello
@@ -23,16 +24,16 @@ Removes every instance of a character or complete string in a string from a stri
 
 **OR**
 
-    $ remChar "h l" -f input.txt
-      eoword
     $ cat input.txt
       hello world
+    $ remChar "h l" -f input.txt
+      eoword
 
 **OR**
 
-    $ remChar "h l" -f input.txt -o output.txt
     $ cat input.txt
       hello world
+    $ remChar "h l" -f input.txt -o output.txt
     $ cat output.txt
       eoword
 
@@ -42,8 +43,8 @@ Removes every instance of a character or complete string in a string from a stri
        world
 
 ## BUILD
-    $ mkdir src/build/
-    $ cd src/build/
-    $ cmake -S ..
+    $ mkdir build/
+    $ cd build/
+    $ cmake ..
     $ make # to build project locally
     $ sudo make install # to build and install the project
