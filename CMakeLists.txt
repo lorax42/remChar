@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
 project(remChar CXX)
-file(GLOB src "*.cpp")
+file(GLOB src "src/*.cpp")
 add_executable(${PROJECT_NAME} ${src})
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
